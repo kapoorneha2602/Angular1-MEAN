@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<!-- <script type="text/javascript" src="/controller.js"></script>
+<script type="text/javascript" src="/server.js"></script> -->
+
+
+<script>
+var app = angular.module("empList", []); 
+app.controller("myCtrl", function($scope,$http) {
+    console.log("in controller");
+    $scope.department = ["Clerical", "Technical", "Non Technical"];
+      //=====================================================================
+    //================Json Hit For Get Countries ================//
+    // $http.get('employee.json').success(function (data) {
+    //     $scope.countries = data;
+    //     console.log("countroes",$scope.countries);
+    // });
+
+//     $http.get('employee.json')
+// .success(function(data) {
+//     console.log("in success",data);
+// })
+// .error(function(data, status) {
+//   console.error('Repos error', status, data);
+// })
+// .finally(function() {
+//   console.log("finally finished repos");
+// });
+// $http({
+//       method: 'GET',
+//       url: 'employee.json'
+//    }).then(function (response){
+//     console.log("in success",response);
+//    },function (error){
+//        console.log("in error",error);
+//    });
+
+//    $http.get('employee.json').then(successCallback, errorCallback);
+
+// function successCallback(response){
+//     //success code
+//     console.log("in success",JSON.parse(response));
+// }
+// function errorCallback(error){
+//     console.log("in error",error);
+//     //error code
+// }
+});
+</script>
+<body>
+<div ng-app="empList" ng-controller="myCtrl">
+    <p>List of Departments</p>
+  <ul>
+    <li ng-repeat="x in department">{{x}}</li>
+  </ul>
+</div>
+</body>
+</html>
